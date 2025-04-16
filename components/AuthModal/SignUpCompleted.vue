@@ -1,0 +1,36 @@
+<script lang="ts" setup>
+import { Button } from "@/components/ui/button";
+
+import { inject } from "vue";
+import { modalKey } from "~/types/injectKeys";
+import type Modal from "~/types/Modal";
+import { useAuthUser } from "../../composables/useAuthUser";
+
+const { toggleModal } = inject(modalKey) as Modal;
+
+const user = useAuthUser();
+</script>
+
+<template>
+  <div class="inline-flex flex-col items-center gap-3">
+    <img
+      class="ma-SharedVerifiedStatus-image"
+      alt="¡Cuenta creada!"
+      title="¡Cuenta creada!"
+      src="https://scm-milanuncios-frontend-pro.milanuncios.com/statics/images/authentication/register-success.svg"
+    />
+    <div class="flex flex-col gap-5 items-center text-center">
+      <span class="text-[40px] leading-10 font-bold"> ¡Cuenta creada! </span>
+      <p>
+        Te hemos enviado un correo a
+        <br />
+        <strong v-if="user">{{ user.email }}</strong>
+        <br />
+        Confirma tu email en un clic para que podamos publicar tu anuncio. Si no
+        lo ves, revisa el spam 😉
+      </p>
+    </div>
+
+    <Button class="w-fit" @click="toggleModal(false)">Entendido </Button>
+  </div>
+</template>
