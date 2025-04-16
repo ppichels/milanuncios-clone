@@ -3,21 +3,36 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  PopoverArrow,
 } from "@/components/ui/popover";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
+import { ChevronDown, ChevronUp } from "lucide-vue-next";
+
 const user = useAuthUser();
 const { logout } = useAuth();
+
+const menuOpen = ref<boolean>(false);
 </script>
 
 <template>
-  <Popover v-if="user">
+  <Popover v-if="user" v-model:open="menuOpen">
     <PopoverTrigger>
-      <Avatar>
-        <AvatarFallback>{{ user.name.charAt(0).toUpperCase() }}</AvatarFallback>
-      </Avatar>
+      <div class="flex gap-2 items-center">
+        <Avatar>
+          <AvatarFallback>{{
+            user.name.charAt(0).toUpperCase()
+          }}</AvatarFallback>
+        </Avatar>
+
+        <ChevronUp v-if="menuOpen" class="w-5 h-5" />
+        <ChevronDown v-else class="w-5 h-5" />
+      </div>
     </PopoverTrigger>
-    <PopoverContent>
+    <PopoverContent
+      class="max-sm:w-screen rounded-t-none border-0 border-t border-slate-100 shadow-xl"
+    >
+      <PopoverArrow>test </PopoverArrow>
       <button
         class="px-4 flex items-center rounded-lg gap-2 hover:bg-slate-200 w-full"
         @click="logout()"
