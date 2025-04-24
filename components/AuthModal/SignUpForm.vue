@@ -33,7 +33,7 @@ const formSchema = toTypedSchema(
     terms: z.boolean({
       required_error: "Es necesario que aceptes las condiciones",
     }),
-  })
+  }),
 );
 
 const loading = ref(false);
@@ -60,7 +60,7 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <form class="space-y-4 flex flex-col justify-center" @submit="onSubmit">
+  <form class="flex flex-col justify-center space-y-4" @submit="onSubmit">
     <FormField v-slot="{ componentField }" name="name">
       <FormItem>
         <FormLabel>Nombre</FormLabel>

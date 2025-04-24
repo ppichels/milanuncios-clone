@@ -5,7 +5,7 @@ const isAuthModalOpen = ref(false);
 </script>
 
 <template>
-  <div class="flex justify-between items-center p-4">
+  <div class="sticky top-0 flex items-center justify-between p-4">
     <img
       class="h-10 w-[150px]"
       src="~/assets/images/milanuncios-logo.svg"

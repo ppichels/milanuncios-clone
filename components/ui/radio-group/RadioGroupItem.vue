@@ -23,13 +23,13 @@ const forwardedProps = useForwardProps(delegatedProps);
     v-bind="forwardedProps"
     :class="
       cn(
-        'bg-white w-5 h-5 rounded-full border border-neutral-400 data-[state=checked]:border-0 data-[state=checked]:bg-green-600 shadow-sm outline-none cursor-default',
-        props.class
+        'h-5 w-5 cursor-default rounded-full border border-neutral-400 bg-white shadow-sm outline-none data-[state=checked]:border-0 data-[state=checked]:bg-green-600',
+        props.class,
       )
     "
   >
     <RadioGroupIndicator
-      class="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-2 after:h-2 after:rounded-[50%] after:bg-white"
+      class="relative flex h-full w-full items-center justify-center after:block after:h-2 after:w-2 after:rounded-[50%] after:bg-white after:content-['']"
     >
     </RadioGroupIndicator>
   </RadioGroupItem>

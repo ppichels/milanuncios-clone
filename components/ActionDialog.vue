@@ -21,7 +21,7 @@ const emit = defineEmits(["update:open"]);
     @update:open="(value: boolean) => emit('update:open', value)"
   >
     <DialogContent
-      class="flex flex-col h-full sm:h-fit max-sm:max-w-none sm:max-w-[400px]"
+      class="flex h-full flex-col max-sm:max-w-none sm:h-fit sm:max-w-[400px]"
     >
       <DialogHeader>
         <slot name="header" />

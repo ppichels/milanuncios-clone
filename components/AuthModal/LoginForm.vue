@@ -24,7 +24,7 @@ const formSchema = toTypedSchema(
     email: z.string().min(2).max(50),
     password: z.string().min(8),
     remember: z.boolean().default(false),
-  })
+  }),
 );
 
 const loading = ref(false);
@@ -52,7 +52,7 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <form class="space-y-4 flex flex-col justify-center" @submit="onSubmit">
+  <form class="flex flex-col justify-center space-y-4" @submit="onSubmit">
     <FormField v-slot="{ componentField }" name="email">
       <FormItem>
         <FormLabel>Email</FormLabel>
@@ -72,7 +72,7 @@ const onSubmit = handleSubmit(async (values) => {
       </FormItem>
     </FormField>
 
-    <Button type="button" variant="link" class="text-black w-fit mx-auto">
+    <Button type="button" variant="link" class="mx-auto w-fit text-black">
       ¿Has olvidado la contraseña?
     </Button>
 

@@ -20,3 +20,11 @@ enum Type {
   private
   professional
 }
+
+model categories {
+  id        Int          @id @default(autoincrement())
+  name      String       @db.VarChar(100)
+  parent_id Int?         @unique
+  parent    categories?  @relation("parent", fields: [parent_id], references: [id])
+  parents   categories[] @relation("parent")
+}

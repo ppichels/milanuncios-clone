@@ -10,7 +10,7 @@ const emit = defineEmits(["update:selectedTab"]);
 </script>
 
 <template>
-  <div class="w-full inline-flex flex-col gap-3">
+  <div class="inline-flex w-full flex-col gap-3">
     <Tabs
       class="-m-6"
       :model-value="selectedTab"

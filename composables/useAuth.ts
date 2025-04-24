@@ -29,7 +29,7 @@ export const useAuth = () => {
     name: string,
     email: string,
     password: string,
-    type: Type
+    type: Type,
   ) => {
     const data = await $fetch("/auth/register", {
       method: "POST",
@@ -65,7 +65,7 @@ export const useAuth = () => {
         });
 
         setUser(data.user);
-      } catch (error) {
+      } catch {
         setUser(null);
       }
 

@@ -19,8 +19,8 @@ const user = useAuthUser();
       title="¡Cuenta creada!"
       src="https://scm-milanuncios-frontend-pro.milanuncios.com/statics/images/authentication/register-success.svg"
     />
-    <div class="flex flex-col gap-5 items-center text-center">
-      <span class="text-[40px] leading-10 font-bold"> ¡Cuenta creada! </span>
+    <div class="flex flex-col items-center gap-5 text-center">
+      <span class="text-[40px] font-bold leading-10"> ¡Cuenta creada! </span>
       <p>
         Te hemos enviado un correo a
         <br />

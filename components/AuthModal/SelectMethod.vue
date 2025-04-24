@@ -12,11 +12,11 @@ const { changeView } = inject(modalKey) as Modal;
 <template>
   <div class="inline-flex flex-col items-center gap-3">
     <img
-      class="w-[200px] h-[200px]"
+      class="h-[200px] w-[200px]"
       src="https://scm-milanuncios-frontend-pro.milanuncios.com/statics/images/authentication/main.svg"
       alt=""
     />
-    <div class="flex flex-col gap-5 items-center text-center">
+    <div class="flex flex-col items-center gap-5 text-center">
       <span class="font-bold"> Entra a tu cuenta </span>
       <p>
         Inicia sesión para comprar y vender más rápido, chatear desde cualquier
@@ -24,7 +24,7 @@ const { changeView } = inject(modalKey) as Modal;
       </p>
     </div>
 
-    <div class="w-full flex flex-col gap-5 mt-3">
+    <div class="mt-3 flex w-full flex-col gap-5">
       <!-- <Button size="lg" variant="secondary">
                 <svg
                   viewBox="0 0 24 24"
@@ -71,12 +71,12 @@ const { changeView } = inject(modalKey) as Modal;
                 Continuar con Google</Button
               > -->
       <Button size="lg" @click="changeView('email-auth')"
-        ><Mail class="!w-5 !h-5" />
+        ><Mail class="!h-5 !w-5" />
         <span class="font-bold"> Continuar con email </span>
       </Button>
     </div>
 
-    <div class="flex items-center font-bold gap-1">
+    <div class="flex items-center gap-1 font-bold">
       <p>¿No tienes cuenta?</p>
       <Button
         class="p-0"
