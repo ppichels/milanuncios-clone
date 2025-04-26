@@ -52,7 +52,7 @@ function expandCategory(categoryId: number | null) {
     @update:open="(value: boolean) => emit('update:open', value)"
   >
     <DialogContent
-      class="flex max-h-[calc(100%-40px)] flex-col gap-4 overflow-y-auto p-4"
+      class="flex h-full flex-col gap-4 overflow-y-auto p-4 max-md:max-w-full md:max-h-[calc(100%-40px)]"
     >
       <div class="mb-3 text-center text-xl font-bold">Categorías</div>
 
@@ -60,7 +60,6 @@ function expandCategory(categoryId: number | null) {
         v-bind="{
           setState,
           expandCategory,
-          getCategoryById,
           closeModal,
           selectCategory,
         }"

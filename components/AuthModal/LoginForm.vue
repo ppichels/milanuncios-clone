@@ -14,10 +14,10 @@ import * as z from "zod";
 import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/zod";
 
-import type Modal from "~/types/Modal";
-import { modalKey } from "~/types/injectKeys";
+import type Modal from "~/types/AuthModal";
+import { authModalKey } from "~/types/injectKeys";
 
-const { toggleModal } = inject(modalKey) as Modal;
+const { toggleModal } = inject(authModalKey) as Modal;
 
 const formSchema = toTypedSchema(
   z.object({

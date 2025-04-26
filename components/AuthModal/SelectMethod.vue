@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 
 import { Mail } from "lucide-vue-next";
 import { inject } from "vue";
-import { modalKey } from "~/types/injectKeys";
-import type Modal from "~/types/Modal";
+import { authModalKey } from "~/types/injectKeys";
+import type Modal from "~/types/AuthModal";
 
-const { changeView } = inject(modalKey) as Modal;
+const { changeView } = inject(authModalKey) as Modal;
 </script>
 
 <template>

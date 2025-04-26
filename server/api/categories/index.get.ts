@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
     return categories;
   }
 
-  const categoriesWithChildrens = categories.map(
+  const formattedCategories = categories.map(
     (category) =>
       <categoryParent>{
         ...category,
@@ -36,16 +36,16 @@ export default defineEventHandler(async (event) => {
       },
   );
 
-  categoriesWithChildrens
+  formattedCategories
     .filter((category) => category.parent_id)
     .forEach((category) => {
-      const parent = categoriesWithChildrens.find(
+      const parent = formattedCategories.find(
         (parent) => parent.id === category.parent_id,
       );
       parent?.childrens.push(category);
     });
 
-  const categoriesByParent = categoriesWithChildrens.filter(
+  const categoriesByParent = formattedCategories.filter(
     (category) => !category.parent_id,
   );
 

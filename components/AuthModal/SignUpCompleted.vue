@@ -2,11 +2,11 @@
 import { Button } from "@/components/ui/button";
 
 import { inject } from "vue";
-import { modalKey } from "~/types/injectKeys";
-import type Modal from "~/types/Modal";
+import { authModalKey } from "~/types/injectKeys";
+import type Modal from "~/types/AuthModal";
 import { useAuthUser } from "../../composables/useAuthUser";
 
-const { toggleModal } = inject(modalKey) as Modal;
+const { toggleModal } = inject(authModalKey) as Modal;
 
 const user = useAuthUser();
 </script>

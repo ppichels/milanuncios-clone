@@ -17,10 +17,10 @@ import { toTypedSchema } from "@vee-validate/zod";
 import { useForm } from "vee-validate";
 import * as z from "zod";
 
-import type Modal from "~/types/Modal";
-import { modalKey } from "~/types/injectKeys";
+import type Modal from "~/types/AuthModal";
+import { authModalKey } from "~/types/injectKeys";
 
-const { changeView } = inject(modalKey) as Modal;
+const { changeView } = inject(authModalKey) as Modal;
 
 const { register } = useAuth();
 

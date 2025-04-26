@@ -3,7 +3,7 @@ import { provide } from "vue";
 
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-vue-next";
-import { modalKey } from "~/types/injectKeys";
+import { authModalKey } from "~/types/injectKeys";
 
 const props = defineProps<{ open: boolean }>();
 const emit = defineEmits(["update:open"]);
@@ -34,7 +34,7 @@ const changeView = (view: ViewsEnum, tab?: TabsEnum) => {
   }
 };
 
-provide(modalKey, { toggleModal, changeView });
+provide(authModalKey, { toggleModal, changeView });
 </script>
 
 <template>
