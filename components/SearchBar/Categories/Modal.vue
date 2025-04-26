@@ -39,10 +39,9 @@ function getCategoryById(data: categoryParent[], id: number) {
 }
 
 function expandCategory(categoryId: number | null) {
-  if (!categoryId) return;
-
-  expandedCategory.value =
-    getCategoryById(props.categories, categoryId) || null;
+  expandedCategory.value = categoryId
+    ? getCategoryById(props.categories, categoryId) || null
+    : null;
 }
 </script>
 

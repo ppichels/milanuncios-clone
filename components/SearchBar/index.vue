@@ -13,7 +13,8 @@ function toggleModal(value: boolean) {
 const selectedCategory = ref<categoryParent | null>(null);
 
 const isCategoriesModalOpen = ref<boolean>(false);
-const categories = await $fetch<categoryParent[]>("/api/categories");
+
+defineProps<{ categories: categoryParent[] }>();
 </script>
 
 <template>
@@ -32,6 +33,4 @@ const categories = await $fetch<categoryParent[]>("/api/categories");
     v-model:open="isCategoriesModalOpen"
     :categories="categories"
   ></SearchBarCategoriesModal>
-
-  <CategoriesCarousel :categories="categories" />
 </template>
